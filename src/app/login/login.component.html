@@ -1,4 +1,9 @@
-<form [formGroup]="login" #loginForm="ngForm" class="container-fluid">
+<form
+  [formGroup]="login"
+  #signupform="ngForm"
+  #loginForm="ngForm"
+  class="container-fluid"
+>
   <div class="container form-group mt-5">
     <h1 class="mt-5 mb-5">Login</h1>
 
@@ -35,7 +40,13 @@
       </div>
     </div>
 
-    <button (click)="getVal(login.value)" class="ml-4 mt-4">Login</button>
+    <button
+      [disabled]="!signupform.valid"
+      (click)="getVal(login.value)"
+      class="ml-4 mt-4"
+    >
+      Login
+    </button>
 
     <p class="mt-5 center">Forgot <a href="">Password</a>?</p>
     <p class="mt-2 center">Dont have account <a href="">signup</a>?</p>
