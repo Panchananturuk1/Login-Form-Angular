@@ -1,0 +1,50 @@
+<form [formGroup]="login" #loginForm="ngForm" class="container-fluid">
+  <div class="container form-group mt-5">
+    <h1 class="mt-5 mb-5">Login</h1>
+
+    <div>
+      <!-- <label class="mt-6" for="">Email</label> -->
+      <input
+        class="form-control"
+        placeholder="Email"
+        formControlName="email"
+        type="email"
+      />
+      <div
+        *ngIf="
+          login.controls['email'].errors && login.controls['email'].touched
+        "
+      >
+        <span class="text-danger">username Required</span>
+      </div>
+    </div>
+
+    <div>
+      <!-- <label for="password">password</label> -->
+      <input
+        class="form-control mt-4"
+        placeholder="Password"
+        formControlName="password"
+        type="password"
+        id="password"
+      />
+      <div
+        *ngIf="
+          login.controls['password'].errors &&
+          login.controls['password'].touched
+        "
+      >
+        <span class="text-danger">Password Required</span>
+      </div>
+    </div>
+
+    <button (click)="getVal(login.value)" class="ml-4 mt-4">Login</button>
+
+    <p class="mt-5 center">Forgot <a href="">Password</a>?</p>
+    <p class="mt-2 center">Dont have account <a href="">signup</a>?</p>
+  </div>
+</form>
+
+<!-- <u><h1>YOUR DATA</h1></u>
+
+{{login.value | json}} -->

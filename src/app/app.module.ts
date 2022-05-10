@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
-  declarations: [AppComponent, HelloComponent],
+  declarations: [AppComponent, HelloComponent, LoginComponent, SigunpComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
