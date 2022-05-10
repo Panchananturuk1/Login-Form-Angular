@@ -1,0 +1,37 @@
+<form [formGroup]="signup" class="container-fluid">
+    
+<div class="container form-group mt-5">
+    <h1 class="mt-5">Signup</h1>
+
+<div>
+    <input class="form-control" placeholder="Name" formControlName="name" type="text" >
+    <div *ngIf="signup.controls['name'].errors && signup.controls['name'].touched">
+        <span class="text-danger">username Required</span>
+    </div>
+</div>
+
+<div>
+    <input class="form-control" placeholder="Email" formControlName="email" type="email">
+    <div *ngIf="signup.controls['email'].errors && signup.controls['email'].touched">
+        <span class="text-danger">email Required</span>
+    </div>
+</div>
+<div>
+    <input class="form-control" placeholder="Password" formControlName="password" type="password" >
+    <div *ngIf="signup.controls['password'].errors && signup.controls['password'].touched">
+        <span class="text-danger">password Required</span>
+    </div>
+</div>
+
+<div>
+    <input class="form-control" placeholder="Password" formControlName="contact" type="text" >
+    <div *ngIf="signup.controls['contact'].errors && signup.controls['contact'].touched">
+        <span class="text-danger">contact Required</span>
+    </div>
+</div>
+
+<button class="ml-4 mt-4">Signup</button>
+<p class="mt-2 center">Alrady have account<a href="">Login</a>?</p>
+</div>
+
+</form>
