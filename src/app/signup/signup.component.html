@@ -67,13 +67,15 @@
       </div>
     </div>
 
-    <button
-      [disabled]="!signupform.valid"
-      (click)="getVal(signup.value)"
-      class="ml-4 mt-4"
-    >
-      Signup
-    </button>
+    <div class="center">
+      <button
+        [disabled]="!signupform.valid"
+        (click)="getVal(signup.value)"
+        class="ml-4 mt-4"
+      >
+        Signup
+      </button>
+    </div>
     <p class="mt-2 center">Alrady have account<a href="">Login</a>?</p>
   </div>
 </form>
