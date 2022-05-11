@@ -14,7 +14,9 @@
           signup.controls['name'].errors && signup.controls['name'].touched
         "
       >
-        <span class="text-danger">username Required</span>
+        <span *ngIf="signup.controls['name'].errors" class="text-danger"
+          >username Required</span
+        >
       </div>
     </div>
 
@@ -76,6 +78,7 @@
         Signup
       </button>
     </div>
-    <p class="mt-2 center">Alrady have account<a href="">Login</a>?</p>
+
+    <p class="mt-2 center">Alrady have account<a href="/login">Login</a>?</p>
   </div>
 </form>
