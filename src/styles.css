@@ -12,7 +12,8 @@ label {
 
 .container {
   background-color: white;
-  width: 26%;
+  /* width: 26%; */
+  /* width: 200 px; */
   /* border: 1px solid black; */
   border-radius: 11px;
   padding: 40px;
@@ -50,4 +51,10 @@ a {
 
 input.ng-invalid.ng-touched {
   border-bottom: 1px solid red;
+}
+
+input[type='email'],
+input[type='password'],
+input[type='text'] {
+  margin-top: 20px;
 }
