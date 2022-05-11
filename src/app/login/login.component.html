@@ -19,7 +19,9 @@
           login.controls['email'].errors && login.controls['email'].touched
         "
       >
-        <span class="text-danger">username Required</span>
+        <span class="text-danger" *ngIf="login.controls['email'].errors"
+          >username Required</span
+        >
       </div>
     </div>
 
@@ -38,6 +40,71 @@
       >
         <span class="text-danger">Password Required</span>
       </div>
+      <form
+        [formGroup]="login"
+        #signupform="ngForm"
+        #loginForm="ngForm"
+        class="container-fluid"
+      >
+        <div class="container form-group mt-5">
+          <h1 class="mt-5 mb-5">Login</h1>
+
+          <div>
+            <input
+              class="form-control"
+              placeholder="Email"
+              formControlName="email"
+              type="email"
+            />
+            <div
+              *ngIf="
+                login.controls['email'].errors &&
+                login.controls['email'].touched
+              "
+            >
+              <span class="text-danger" *ngIf="login.controls['email'].errors"
+                >username Required</span
+              >
+            </div>
+          </div>
+
+          <div>
+            <input
+              class="form-control mt-4"
+              placeholder="Password"
+              formControlName="password"
+              type="password"
+            />
+            <div
+              *ngIf="
+                login.controls['password'].errors &&
+                login.controls['password'].touched
+              "
+            >
+              <span class="text-danger">Password Required</span>
+            </div>
+          </div>
+
+          <div class="center">
+            <button
+              [disabled]="!signupform.valid"
+              (click)="getVal(login.value)"
+              class="ml-4 mt-4"
+            >
+              Login
+            </button>
+          </div>
+
+          <p class="mt-5 center">Forgot <a href="">Password</a>?</p>
+
+          <p class="mt-2 center">
+            Dont have account <a href="/signup">signup</a>?
+          </p>
+        </div>
+      </form>
+      <router-outlet></router-outlet>
+
+      <!-- {{login.value | json}}  -->
     </div>
 
     <div class="center">
@@ -51,10 +118,9 @@
     </div>
 
     <p class="mt-5 center">Forgot <a href="">Password</a>?</p>
-    <p class="mt-2 center">Dont have account <a href="">signup</a>?</p>
+
+    <p class="mt-2 center">Dont have account <a href="/signup">signup</a>?</p>
   </div>
 </form>
 
-<!-- <u><h1>YOUR DATA</h1></u>
-
-{{login.value | json}} -->
+<!-- {{login.value | json}}  -->
