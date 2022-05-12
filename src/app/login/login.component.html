@@ -14,9 +14,19 @@
           login.controls['email'].errors && login.controls['email'].touched
         "
       >
-        <span class="text-danger" *ngIf="login.controls['email'].errors"
-          >username Required</span
+        <span
+          class="text-danger"
+          *ngIf="login.controls['email'].errors?.['required']"
+          >Email Required</span
         >
+        <span class="text-danger" *ngIf=" email && email.errors?.['email']"
+          >Please enter a valid email</span
+        >
+      </div>
+      <div
+        *ngIf="login.controls['email'].valid && login.controls['email'].touched"
+      >
+        <span class="text-success">sucess</span>
       </div>
     </div>
 
@@ -33,13 +43,22 @@
           login.controls['password'].touched
         "
       >
-        <span class="text-danger">Password Required</span>
+        <span
+          class="text-danger"
+          *ngIf="password && password.errors?.['required']"
+          >Password Required</span
+        >
+        <span
+          class="text-danger"
+          *ngIf="password && password.errors?.['minlength']"
+          >Minimum 3 character allowed</span
+        >
       </div>
     </div>
 
     <div class="center">
       <button
-        [disabled]="!loginForm.valid"
+        [disabled]="loginForm.invalid"
         (click)="getVal(login.value)"
         class="ml-4 mt-4"
       >
@@ -52,5 +71,6 @@
     <p class="mt-2 center">Dont have account <a href="/signup">signup</a>?</p>
   </div>
 </form>
+<router-outlet></router-outlet>
 
 <!-- {{login.value | json}}  -->
