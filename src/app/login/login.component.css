@@ -1,3 +1,19 @@
 a {
   text-decoration: none;
 }
+
+button {
+  width: 75%;
+  margin-left: 35px;
+  color: white;
+  border: none;
+  font-size: 20px;
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+}
+
+h1 {
+  text-align: center;
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

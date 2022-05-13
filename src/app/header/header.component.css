@@ -1,0 +1,32 @@
+h1 {
+  /* text-align: center; */
+  /* font-size: large;
+  color: white; */
+  /* background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+
+  margin-left: 10px;
+}
+
+ul {
+  /* float:right; */
+  list-style-type: none;
+}
+.white {
+  text-decoration: none;
+  color: white;
+}
+
+.white:hover {
+  color: pink;
+}
+ul li {
+  display: inline-block;
+}
+li a {
+  /* float:right; */
+  margin: 15px;
+  text-decoration: none;
+  color: white;
+}

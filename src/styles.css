@@ -29,26 +29,11 @@ input[type='text'] {
   margin-top: 20px;
 }
 
-h1 {
-  text-align: center;
-  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
-button {
-  width: 75%;
-  margin-left: 35px;
-  color: white;
-  border: none;
-  font-size: 20px;
-  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
-}
 
-a {
-  text-decoration: none;
-  color: green;
-}
+
+
+
 
 .center {
   text-align: center;
