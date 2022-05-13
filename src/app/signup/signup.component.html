@@ -14,8 +14,13 @@
           signup.controls['name'].errors && signup.controls['name'].touched
         "
       >
-        <span *ngIf="signup.controls['name'].errors" class="text-danger"
+        <span
+          *ngIf="signup.controls['name'].errors?.['required']"
+          class="text-danger"
           >username Required</span
+        >
+        <span class="text-danger" *ngIf="name && name.errors?.['minlength']"
+          >required Minimum 3 characters</span
         >
       </div>
     </div>
@@ -27,13 +32,22 @@
         formControlName="email"
         type="email"
       />
+
+      <!-- IF invalid -->
       <div
         *ngIf="
           signup.controls['email'].errors && signup.controls['email'].touched
         "
       >
-        <span class="text-danger">email Required</span>
+        <span class="text-danger" *ngIf="email && email.errors?.['required']"
+          >email Required</span
+        >
+        <span class="text-danger" *ngIf=" email && email.errors?.['email']"
+          >Enter valid email</span
+        >
       </div>
+      <!-- IF VALID -->
+      <div *ngIf="email && email.valid && email.touched"></div>
     </div>
     <div>
       <input
@@ -48,7 +62,16 @@
           signup.controls['password'].touched
         "
       >
-        <span class="text-danger">password Required</span>
+        <span
+          class="text-danger"
+          *ngIf="password && password.errors?.['required']"
+          >password Required</span
+        >
+        <span
+          class="text-danger"
+          *ngIf="password && password.errors?.['minlength']"
+          >required Minimum 3 characters</span
+        >
       </div>
     </div>
 
@@ -65,7 +88,14 @@
           signup.controls['contact'].touched
         "
       >
-        <span class="text-danger">contact Required</span>
+        <span
+          class="text-danger"
+          *ngIf="contact && contact.errors?.['required']"
+          >contact Required</span
+        >
+        <span class="text-danger" *ngIf="contact && contact.errors?.['pattern']"
+          >number should be 10 digit</span
+        >
       </div>
     </div>
 

@@ -8,11 +8,33 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class SignupComponent {
   signup = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-    contact: new FormControl('', [Validators.required]),
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    contact: new FormControl('', [
+      Validators.required,
+      Validators.pattern('[0-9]{10}$'),
+    ]),
   });
+
+  get name() {
+    return this.signup.get('name');
+  }
+
+  get email() {
+    return this.signup.get('email');
+  }
+
+  get password() {
+    return this.signup.get('password');
+  }
+
+  get contact() {
+    return this.signup.get('contact');
+  }
 
   display: string = '';
   getVal(val: string) {
