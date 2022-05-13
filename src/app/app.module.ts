@@ -17,8 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     HelloComponent,
-    routingComponents,
+
     HeaderComponent,
+    routingComponents,
   ],
   bootstrap: [AppComponent],
 })

@@ -31,6 +31,9 @@ input[type='text'] {
 
 h1 {
   text-align: center;
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 button {
@@ -44,6 +47,7 @@ button {
 
 a {
   text-decoration: none;
+  color: green;
 }
 
 .center {
