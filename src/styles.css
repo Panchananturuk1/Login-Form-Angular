@@ -12,7 +12,7 @@ label {
 
 .container {
   background-color: white;
-  /* width: 26%; */
+  width: 26%;
   /* width: 200 px; */
   /* border: 1px solid black; */
   border-radius: 11px;
@@ -28,12 +28,6 @@ input[type='text'] {
   border-bottom: 1px solid #555;
   margin-top: 20px;
 }
-
-
-
-
-
-
 
 .center {
   text-align: center;
