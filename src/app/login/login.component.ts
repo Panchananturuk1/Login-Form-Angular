@@ -12,8 +12,6 @@ import {
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-
   // USING FORM GROUP
 
   // login =  new FormGroup({
@@ -31,7 +29,6 @@ export class LoginComponent implements OnInit {
   //   get password() {
   //     return this.login.get('password');
   //   }
-
 
   //USING FORM BUILDER
 
@@ -60,13 +57,10 @@ export class LoginComponent implements OnInit {
 
   login(): void {}
 
-
   display: string = '';
-    getVal(val: string) {
-      console.log(val);
-      this.display = val;
-      alert('Login Sucess');
-    }
-
-
+  getVal(val: string) {
+    console.log(val);
+    this.display = val;
+    alert('Login Sucess');
+  }
 }
