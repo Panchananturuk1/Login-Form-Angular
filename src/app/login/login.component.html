@@ -1,4 +1,9 @@
-<form [formGroup]="login" #loginForm="ngForm" class="container-fluid">
+<form
+  [formGroup]="loginForm"
+  #loginForms="ngForm"
+  class="container-fluid"
+  (ngSubmit)="login()"
+>
   <div class="container form-group mt-5">
     <h1 class="mt-5 mb-5">Login</h1>
 
@@ -9,25 +14,35 @@
         formControlName="email"
         type="email"
       />
-      <div
+      <!-- <div
         *ngIf="
-          login.controls['email'].errors && login.controls['email'].touched
+          loginForm.controls['email'].errors &&
+          loginForm.controls['email'].touched
         "
-      >
+      > -->
+
+      <div *ngIf="f.email.errors && f.email.touched">
+        <!-- <span class="text-danger" *ngIf="loginForm.controls['email'].errors.required"
+          >Email Required</span
+        > -->
         <span
           class="text-danger"
-          *ngIf="login.controls['email'].errors?.['required']"
+          *ngIf="f.email.errors.required"
           >Email Required</span
         >
-        <span class="text-danger" *ngIf=" email && email.errors?.['email']"
-          >Please enter a valid email</span
-        >
-      </div>
-      <div
-        *ngIf="login.controls['email'].valid && login.controls['email'].touched"
+   
+        <span class="text-danger" *ngIf=" f.email.errors.email"
+        >Please enter a valid email</span
       >
-        <span class="text-success">sucess</span>
       </div>
+
+      <div
+      *ngIf="
+        f.email.valid && f.email.touched
+      "
+    >
+      <span class="text-success">sucess</span>
+    </div>
     </div>
 
     <div>
@@ -39,18 +54,15 @@
       />
       <div
         *ngIf="
-          login.controls['password'].errors &&
-          login.controls['password'].touched
+          loginForm.controls['password'].errors &&
+          loginForm.controls['password'].touched
         "
       >
-        <span
-          class="text-danger"
-          *ngIf="password && password.errors?.['required']"
+        <span class="text-danger" *ngIf="f.errors?.['required']"
           >Password Required</span
         >
-        <span
-          class="text-danger"
-          *ngIf="password && password.errors?.['minlength']"
+
+        <span class="text-danger" *ngIf="f.errors?.['minlength']"
           >Minimum 3 character allowed</span
         >
       </div>
@@ -58,8 +70,8 @@
 
     <div class="center">
       <button
-        [disabled]="loginForm.invalid"
-        (click)="getVal(login.value)"
+        [disabled]="loginForms.invalid"
+        (click)="getVal(loginForm.value)"
         class="ml-4 mt-4"
       >
         Login
