@@ -52,17 +52,19 @@
         formControlName="password"
         type="password"
       />
-      <div
+      <!-- <div
         *ngIf="
           loginForm.controls['password'].errors &&
           loginForm.controls['password'].touched
         "
-      >
-        <span class="text-danger" *ngIf="f.errors?.['required']"
+      > -->
+
+      <div *ngIf="f.password.errors && f.password.touched">
+        <span class="text-danger" *ngIf="f.password.errors.required"
           >Password Required</span
         >
 
-        <span class="text-danger" *ngIf="f.errors?.['minlength']"
+        <span class="text-danger" *ngIf="f.password.errors.minlength"
           >Minimum 3 character allowed</span
         >
       </div>
